@@ -1,0 +1,269 @@
+[
+  { "label": "Indian Institute of Technology Madras", "value": 0 },
+  { "label": "Indian Institute of Technology, Delhi", "value": 1 },
+  { "label": "Indian Institute of Technology, Bombay", "value": 2 },
+  { "label": "Indian Institute of Technology Kanpur", "value": 3 },
+  { "label": "Indian Institute of Technology, Kharagpur", "value": 4 },
+  { "label": "Indian Institute of Technology, Roorkee", "value": 5 },
+  { "label": "Indian Institute of Technology Guwahati", "value": 6 },
+  { "label": "National Institute of Technology, Tiruchirappalli", "value": 7 },
+  { "label": "Indian Institute of Technology Hyderabad", "value": 8 },
+  {
+    "label": "National Institute of Technology Karnataka, Surathkal",
+    "value": 9
+  },
+  { "label": "Jadavpur University", "value": 10 },
+  { "label": "Vellore Institute of Technology", "value": 11 },
+  {
+    "label": "Indian Institute of Technology (Banaras Hindu University) Varanasi",
+    "value": 12
+  },
+  {
+    "label": "Indian Institute of Technology (Indian School of Mines)",
+    "value": 13
+  },
+  { "label": "National Institute of Technology Rourkela", "value": 14 },
+  { "label": "Indian Institute of Technology Indore", "value": 15 },
+  { "label": "Anna University", "value": 16 },
+  { "label": "Institute of Chemical Technology", "value": 17 },
+  { "label": "Amrita Vishwa Vidyapeetham", "value": 18 },
+  { "label": "Indian Institute of Technology, Mandi", "value": 19 },
+  { "label": "National Institute of Technology Warangal", "value": 20 },
+  { "label": "Indian Institute of Technology Ropar", "value": 21 },
+  { "label": "Indian Institute of Technology, Gandhinagar", "value": 22 },
+  { "label": "S.R.M. Institute of Science and Technology", "value": 23 },
+  { "label": "Amity University", "value": 24 },
+  { "label": "Jamia Millia Islamia, New Delhi", "value": 25 },
+  { "label": "Siksha `O` Anusandhan", "value": 26 },
+  { "label": "Thapar Institute of Engineering and Technology", "value": 27 },
+  { "label": "Birla Institute of Technology & Science - Pilani", "value": 28 },
+  { "label": "Indian Institute of Technology Jodhpur", "value": 29 },
+  { "label": "National Institute of Technology, Calicut", "value": 30 },
+  {
+    "label": "Visvesvaraya National Institute of Technology, Nagpur",
+    "value": 31
+  },
+  { "label": "Indian Institute of Technology, Patna", "value": 32 },
+  { "label": "National Institute of Technology Durgapur", "value": 33 },
+  { "label": "Delhi Technological University", "value": 34 },
+  { "label": "Maharaja Agrasen College, Delhi", "value": 35 },
+  { "label": "Indian Institute of Technology Bhubaneswar", "value": 36 },
+  { "label": "Aligarh Muslim University", "value": 37 },
+  { "label": "National Institute of Technology, Silchar", "value": 38 },
+  { "label": "Kalasalingam Academy of Research and Education", "value": 39 },
+  {
+    "label": "Shanmugha Arts Science Technology & Research Academy",
+    "value": 40
+  },
+  { "label": "Kalinga Institute of Industrial Technology", "value": 41 },
+  { "label": "Indian Institute of Space Science and Technology", "value": 42 },
+  { "label": "Chandigarh University", "value": 43 },
+  { "label": "Malaviya National Institute of Technology", "value": 44 },
+  { "label": "Motilal Nehru National Institute of Technology", "value": 45 },
+  { "label": "Sri Sivasubramaniya Nadar College of Engineering", "value": 46 },
+  { "label": "Visvesvaraya Technological University", "value": 47 },
+  { "label": "National Institute of Technology Kurukshetra", "value": 48 },
+  { "label": "Lovely Professional University", "value": 49 },
+  {
+    "label": "Dr. B R Ambedkar National Institute of Technology, Jalandhar",
+    "value": 50
+  },
+  { "label": "Birla Institute of Technology", "value": 51 },
+  { "label": "Sathyabama Institute of Science and Technology", "value": 52 },
+  { "label": "Manipal Institute of Technology", "value": 53 },
+  { "label": "Indian Institute of Technology, Tirupati", "value": 54 },
+  { "label": "PSG College of Technology", "value": 55 },
+  {
+    "label": "Sardar Vallabhbhai National Institute of Technology",
+    "value": 56
+  },
+  { "label": "Banasthali Vidyapith", "value": 57 },
+  { "label": "National Institute of Technology Meghalaya", "value": 58 },
+  { "label": "University of Petroleum and Energy Studies", "value": 59 },
+  {
+    "label": "International Institute of Information Technology Hyderabad",
+    "value": 60
+  },
+  { "label": "National Institute of Technology, Patna", "value": 61 },
+  { "label": "Graphic Era University", "value": 62 },
+  { "label": "National Institute of Technology, Raipur", "value": 63 },
+  { "label": "National Institute of Technology Srinagar", "value": 64 },
+  { "label": "M. S. Ramaiah Institute of Technology", "value": 65 },
+  { "label": "Indian Institute of Technology Palakkad", "value": 66 },
+  {
+    "label": "Indraprastha Institute of Information Technology Delhi",
+    "value": 67
+  },
+  { "label": "Maulana Azad National Institute of Technology", "value": 68 },
+  { "label": "Defence Institute of Advanced Technology", "value": 69 },
+  { "label": "College of Engineering, Pune", "value": 70 },
+  { "label": "Sri Krishna College of Engineering and Technology", "value": 71 },
+  { "label": "Guru Gobind Singh Indraprastha University", "value": 72 },
+  { "label": "Manipal University, Jaipur", "value": 73 },
+  { "label": "Jawaharlal Nehru Technological University", "value": 74 },
+  { "label": "AU College of Engineering (A)", "value": 75 },
+  { "label": "Netaji Subhas University of Technology (NSUT)", "value": 76 },
+  { "label": "National Institute of Technology Agartala", "value": 77 },
+  {
+    "label": "International Institute of Information Technology Bangalore",
+    "value": 78
+  },
+  { "label": "National Institute of Technology, Jamshedpur", "value": 79 },
+  { "label": "SR University", "value": 80 },
+  { "label": "Panjab University", "value": 81 },
+  {
+    "label": "Indian Institute of Information Technology Allahabad",
+    "value": 82
+  },
+  { "label": "Jaypee Institute of Information Technology", "value": 83 },
+  { "label": "Rajalakshmi Engineering College", "value": 84 },
+  { "label": "The Northcap University", "value": 85 },
+  { "label": "Siddaganga Institute of Technology", "value": 86 },
+  { "label": "C.V. Raman Global University, Odisha", "value": 87 },
+  {
+    "label": "Vignan's Foundation for Science, Technology and Research",
+    "value": 88
+  },
+  { "label": "PES University", "value": 89 },
+  { "label": "Coimbatore Institute of Technology", "value": 90 },
+  {
+    "label": "Manav Rachna International Institute of Research & Studies",
+    "value": 91
+  },
+  { "label": "Pandit Deendayal Energy University", "value": 92 },
+  { "label": "Karunya Institute of Technology and Sciences", "value": 93 },
+  { "label": "National Institute of Technology Manipur", "value": 94 },
+  { "label": "Kumaraguru College of Technology", "value": 95 },
+  { "label": "College of Engineering, Trivandrum", "value": 96 },
+  { "label": "Shri Mata Vaishno Devi University", "value": 97 },
+  { "label": "Gandhi Institute of Technology and Management", "value": 98 },
+  { "label": "Veer Surendra Sai University of Technology", "value": 99 },
+  {
+    "label": "Indian Institute of Information Technology Guwahati",
+    "value": 100
+  },
+  { "label": "Amity University Haryana, Gurgaon", "value": 101 },
+  { "label": "Jain University, Bangalore", "value": 102 },
+  { "label": "Dr. Vishwanath Karad MIT World Peace University", "value": 103 },
+  { "label": "University College of Engineering", "value": 104 },
+  { "label": "Kongu Engineering College", "value": 105 },
+  {
+    "label": "Veermata Jijabai Technological Institute (VJTI, Mumbai)",
+    "value": 106
+  },
+  { "label": "Dayalbagh Educational Institute", "value": 107 },
+  { "label": "New Horizon College of Engineering", "value": 108 },
+  { "label": "Sri Krishna College of Technology", "value": 109 },
+  { "label": "Tezpur University", "value": 110 },
+  { "label": "PSG Institute of Technology and Applied Research", "value": 111 },
+  { "label": "Nirma University", "value": 112 },
+  { "label": "National Institute of Technology, Hamirpur", "value": 113 },
+  { "label": "Jawaharlal Nehru Technological University", "value": 114 },
+  { "label": "Mepco Schlenk Engineering College", "value": 115 },
+  { "label": "National Institute of Technology Uttarakhand", "value": 116 },
+  { "label": "Amity University, Jaipur", "value": 117 },
+  {
+    "label": "SVKM`s Narsee Monjee Institute of Management Studies",
+    "value": 118
+  },
+  { "label": "National Institute of Technology Puducherry", "value": 119 },
+  { "label": "P E S College of Engineering, Mandya", "value": 120 },
+  { "label": "Jaypee University of Information Technology", "value": 121 },
+  { "label": "Chandigarh Engineering College", "value": 122 },
+  { "label": "Anurag University", "value": 123 },
+  {
+    "label": "Velagapudi Ramakrishna Siddhartha Engineering College",
+    "value": 124
+  },
+  { "label": "Vishwakarma Institute of Technology", "value": 125 },
+  {
+    "label": "J. C. Bose University of Science and Technology, YMCA",
+    "value": 126
+  },
+  { "label": "Chitkara University", "value": 127 },
+  { "label": "Noida Institute of Engineering & Technology", "value": 128 },
+  {
+    "label": "Shri Ramdeobaba College of Engineering and Management",
+    "value": 129
+  },
+  { "label": "Galgotias University", "value": 130 },
+  {
+    "label": "Goka Raju Ranga Raju Institute of Engineering & Technology",
+    "value": 131
+  },
+  { "label": "Maharaja Sayajirao University of Baroda", "value": 132 },
+  { "label": "Pondicherry Engineering College", "value": 133 },
+  {
+    "label": "Hindustan Institute of Technology and Science (HITS)",
+    "value": 134
+  },
+  { "label": "Amity University, Gwalior", "value": 135 },
+  { "label": "R.M.K. Engineering College", "value": 136 },
+  { "label": "Mahindra University", "value": 137 },
+  {
+    "label": "Saveetha Institute of Medical and Technical Sciences",
+    "value": 138
+  },
+  { "label": "Sri Sairam Engineering College", "value": 139 },
+  { "label": "JSS Science and Technology University", "value": 140 },
+  { "label": "Vardhaman College of Engineering", "value": 141 },
+  { "label": "G. H. Raisoni College of Engineering, Nagpur", "value": 142 },
+  { "label": "Sharda University", "value": 143 },
+  { "label": "Sree Vidyanikethan Engineering College", "value": 144 },
+  { "label": "Chaitanya Bharathi Institute of Technology", "value": 145 },
+  { "label": "Rabindranath Tagore University", "value": 146 },
+  { "label": "National Engineering College", "value": 147 },
+  { "label": "CVR College of Engineering", "value": 148 },
+  {
+    "label": "National Institute of Technology Arunachal Pradesh",
+    "value": 149
+  },
+  { "label": "Army Institute of Technology", "value": 150 },
+  { "label": "National Institute of Technology Sikkim", "value": 151 },
+  { "label": "Sona College of Technology", "value": 152 },
+  { "label": "NMAM Institute of Technology", "value": 153 },
+  { "label": "Chennai Institute of Technology", "value": 154 },
+  {
+    "label": "Indira Gandhi Delhi Technical University for Women",
+    "value": 155
+  },
+  {
+    "label": "Sant Longowal Institute of Engineering & Technology",
+    "value": 156
+  },
+  { "label": "DIT University", "value": 157 },
+  { "label": "C M R Institute of Technology", "value": 158 },
+  { "label": "Easwari Engineering College", "value": 159 },
+  { "label": "Rajiv Gandhi Institute of Petroleum Technology", "value": 160 },
+  { "label": "Nitte Meenakshi Institute of Technology", "value": 161 },
+  { "label": "Maharishi Markandeshwar", "value": 162 },
+  { "label": "Galgotias College of Engineering & Technology", "value": 163 },
+  { "label": "Dr. D. Y. Patil Institute of Technology", "value": 164 },
+  { "label": "National Institute of Technology Delhi", "value": 165 },
+  { "label": "Yeshwantrao Chavan College of Engineering", "value": 166 },
+  { "label": "G. L. A. University", "value": 167 },
+  { "label": "KIET Group of Institutions", "value": 168 },
+  { "label": "GMR Institute of Technology", "value": 169 },
+  { "label": "Christ University", "value": 170 },
+  {
+    "label": "Sri Venkateswara College of Engineering and Technology",
+    "value": 171
+  },
+  { "label": "BMS Institute of Technology & Management", "value": 172 },
+  { "label": "Vidya Jyothi Institute of Technology", "value": 173 },
+  {
+    "label": "G. L. Bajaj Institute of Technology and Management",
+    "value": 174
+  },
+  { "label": "KLE Technological University", "value": 175 },
+  {
+    "label": "Shri Vile Parle Kelavani Mandal`s Dwarkadas J. Sanghvi College of Engineering",
+    "value": 176
+  },
+  { "label": "Punjab Engineering College, Chandigarh", "value": 177 },
+  {
+    "label": "University Institute of Engineering and Technology, Chandigarh",
+    "value": 178
+  },
+  { "label": "Chandigarh College of Engineering and Technology", "value": 179 }
+]

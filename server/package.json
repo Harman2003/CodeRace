@@ -1,0 +1,24 @@
+{
+  "name": "coderace",
+  "version": "1.0.0",
+  "description": "Code More, Earn More ! A Coding Competition Website where you can upskill yourself.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "agentkeepalive": "^4.3.0",
+    "bcrypt": "^5.1.0",
+    "cheerio": "^1.0.0-rc.12",
+    "cookie-parser": "^1.4.6",
+    "jsonwebtoken": "^9.0.0",
+    "nanoid": "^3.0.0",
+    "nodemon": "^2.0.20",
+    "puppeteer": "^19.7.2",
+    "querystring": "^0.2.1",
+    "tough-cookie": "^4.1.2"
+  }
+}
