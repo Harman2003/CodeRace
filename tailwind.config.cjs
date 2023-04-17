@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     extend: {
       animation: {
-        fade: "fadeOut 5s ease-in-out forwards",
+        fade: "fadeOut 3s ease-in-out forwards",
       },
 
       // that is actual animation
@@ -26,6 +26,7 @@ module.exports = {
         poppins: ["Poppins", "sans-serif"],
         openSans: ["Open Sans", "sans-serif"],
         roboto: ["Roboto", "sans-serif"],
+        NunitoSans: ["Nunito Sans", "sans-serif"]
       },
     },
     screens: {

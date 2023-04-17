@@ -4,7 +4,8 @@ import axios from "../../../../setup/api/axios";
 import { RxCross1 as X } from "react-icons/rx";
 import { BiSearch } from "react-icons/bi";
 import { GiArchiveResearch } from "react-icons/gi";
-import { MdDelete as Delete} from "react-icons/md";
+import { MdDelete as Delete } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 
 
 // Pending Work: Get all problems at your server and update on opening this modal
@@ -13,7 +14,8 @@ const ProblemModal = ({ setList, setIsModal }) => {
   const [popupList, setpopupList] = useState([]);
   const [problemList, setProblemList] = useState([]);
   const [searchValue, setSearchValue] = useState("");
-  const [isIssue, setIssue]= useState(false)
+  const [isIssue, setIssue] = useState(false);
+  const navigate= useNavigate()
 
   const { data, isLoading, isError } = useQuery("searchList", async () => {
     const response = await axios.get(
@@ -21,6 +23,12 @@ const ProblemModal = ({ setList, setIsModal }) => {
     );
     return response.data.result.problems;
   });
+
+  useEffect(() => {
+    if (isError) {
+      navigate('/not-found');
+    }
+  }, [isError])
 
   const listRef = useRef(null);
 
@@ -46,10 +54,10 @@ const ProblemModal = ({ setList, setIsModal }) => {
   }, [problemList]);
   
   return (
-    <div className="fixed top-0 left-0 w-screen h-screen bg-black/25 flex justify-center items-center"
+    <div className="z-40 fixed top-0 left-0 w-screen h-screen bg-black/25 flex justify-center items-center"
     >
       <div
-        className="absolute flex flex-col w-[350px] p-3 h-96 bg-white rounded-lg shadow-2xl sm:w-[500px]"
+        className="z-40 absolute flex flex-col w-[350px] p-3 h-96 bg-white rounded-lg shadow-2xl sm:w-[500px]"
         onClick={() => setpopupList([])}
       >
         <X
@@ -72,7 +80,7 @@ const ProblemModal = ({ setList, setIsModal }) => {
           />
           <BiSearch size={20} color="gray" />
           {popupList.length != 0 && (
-            <div className="absolute z-10 top-8 w-full h-48 bg-gray-50 shadow-2xl overflow-scroll">
+            <div className="absolute z-20 top-8 w-full h-48 bg-gray-50 shadow-2xl overflow-y-auto">
               {popupList.map((e, i) =>
                 row(i, e.name, e.index, e.contestId, e.rating, true)
               )}
@@ -93,7 +101,7 @@ const ProblemModal = ({ setList, setIsModal }) => {
               : "Add some problems to this collection"}
           </div>
         )}
-        <div ref={listRef} className="flex-grow overflow-scroll">
+        <div ref={listRef} className="flex-grow overflow-y-auto">
           {problemList.map((e, i) =>
             row(i, e.name, e.index, e.contestId, e.rating, false)
           )}
@@ -130,7 +138,7 @@ const ProblemModal = ({ setList, setIsModal }) => {
       <div
         key={key}
         data-tag={key}
-        className="relative font-poppins m-1 px-2 py-1 flex items-center text-sm shadow-sm cursor-pointer"
+        className="relative my-1 mr-4 px-2 py-1 flex items-center text-sm shadow-sm cursor-pointer"
         onClick={(e) => {
           if (ispopup) {
             const val = e.currentTarget.getAttribute("data-tag");

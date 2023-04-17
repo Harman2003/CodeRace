@@ -16,16 +16,15 @@ const Posts = new Schema({
         required:true
     },
     countComments: {
-        type: Number
+        type: Number,
+        default:0
     },
     countLikes: {
-        type: Number
+        type: Number,
+        default:0
     },
     countShare: {
         type: Number
-    },
-    countSaved: {
-        type:Number
     }
 })
 

@@ -18,8 +18,8 @@ const getCSRF = async () => {
       response.on("end", async () => {
         const regex = /csrf='(.+?)'/g;
         const result = data.match(regex);
-        const csrf = result.join().split("=")[1];
-        resolve(csrf.substring(1, csrf.length - 1));
+        const csrf = result?.join().split("=")[1];
+        resolve(csrf?.substring(1, csrf.length - 1));
       });
     });
 

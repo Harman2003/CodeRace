@@ -1,11 +1,9 @@
 import useAxiosPrivate from "./useAxiosPrivate";
 import { useMutation } from "react-query";
 import { useState } from "react";
-import useAuth from "./useAuth";
 
 const useSubmit = () => {
   const axiosPrivate= useAxiosPrivate()
-  const { auth } = useAuth();
   const [status, setStatus] = useState();
   const { mutate, isLoading } = useMutation(apiCall, {
     onSuccess: (res) => {
@@ -28,7 +26,8 @@ const useSubmit = () => {
   // post section ab handle kr lena maine profile edit ke liye changes kre
   
   async function apiCall({ url, obj }) {
-      const response = await axiosPrivate.post(url, obj.body, obj.query)
+    const response = await axiosPrivate.post(url, obj.body, obj.query)
+    console.log(response);
       return response;
   }
 }

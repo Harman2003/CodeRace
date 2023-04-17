@@ -12,7 +12,6 @@ const useAxiosPrivate = () => {
         const requestIntercept = axiosPrivate.interceptors.request.use(
             config => {
                 if (!config.headers['Authorization']) {
-                    console.log('hurray')
                     config.headers["Authorization"]= `Bearer ${auth?.accessToken}`
                 }
                 return config;
@@ -23,11 +22,14 @@ const useAxiosPrivate = () => {
             async (error) => {
                 const prevRequest = error?.config;
                 if (error?.response?.status === 403 && !prevRequest?.sent) {
+                    console.log('agya');
                     prevRequest.sent = true;
-                    const newAccessToken = await refresh();
+                    const {username, newAccessToken} = await refresh();
                     prevRequest.headers['Authorization'] = `Bearer ${newAccessToken}`;
-                    return axiosPrivate(prevRequest);
+                   
+                    return axiosPrivate({...prevRequest, params:{username:username}});
                 }
+                
                 return Promise.reject(error);
             }
         );

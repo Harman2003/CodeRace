@@ -9,6 +9,7 @@ import Switch from "react-switch";
 import useAuth from "../../../setup/hooks/useAuth";
 import { useEffect } from "react";
 import useAxiosPrivate from "../../../setup/hooks/useAxiosPrivate";
+import useSubmit from "../../../setup/hooks/useSubmit";
 
 const Modal = ({ userData, setUserData, setIsModal }) => {
   const { auth } = useAuth();
@@ -184,7 +185,6 @@ const Modal = ({ userData, setUserData, setIsModal }) => {
       github: github.current.value,
     };
 
-    // await submit(`/profile`, { body: { UserObj: newData }, query: { params: { username: auth.user } } });
     await axiosPrivate.post(
       `/profile`,
       { UserObj: newData },

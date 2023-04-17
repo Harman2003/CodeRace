@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -9,6 +10,7 @@
 @layer components{
   .grow-effect{
     @apply transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-110 hover:text-gray-600 duration-300;
+    
   }
 }
 
@@ -26,6 +28,10 @@
     #11101d 91.61%
   );
   --card-shadow: 0px 20px 100px -10px rgba(66, 71, 91, 0.1);
+  --fuschia: #6a00ff;
+  --button-bg: var(--fuschia);
+  --button-text-color: #fff;
+  --baby-blue: #f8faff;
 }
 
 * {
@@ -47,14 +53,14 @@
   color: transparent;
 }
 
-.purple-gradient{
+/* .purple-gradient{
  background: linear-gradient(
     144.39deg,
     #ffffff -278.56%,
-    #fac8bdd1 -78.47%,
-    #e7dbffa7 91.61%
+    #edc6bdd1 -78.47%,
+    #fdfcffa7 91.61%
   )
-}
+} */
 
 .btn-orange {
   background: linear-gradient(to bottom right, #ff9400, #ff5500);
@@ -92,13 +98,54 @@
   );
 }
 
-.bg-black-gradient {
+.bg-purple-gradient{
+  background-color: #8224e3;
   background: linear-gradient(
-    144.39deg,
-    #ffffff -278.56%,
-    #6d6d6d -78.47%,
-    #11101d 91.61%
-  )
+    157.81deg,
+    #9b52cc -43.27%,
+    #9235d8 -21.24%,
+    #5e18ec 12.19%,
+    #730de8 29.82%,
+    #8a33b5 51.94%,
+    #be90e6 90.29%
+  );
+}
+
+.hover-purple-gradient{
+  transition: background-color 1s ease-in-out;
+}
+.hover-purple-gradient:hover{
+  background-color: #8224e3;
+  color:white;
+  background: linear-gradient(
+    157.81deg,
+    #9b52cc -43.27%,
+    #9235d8 -21.24%,
+    #5e18ec 12.19%,
+    #730de8 29.82%,
+    #8a33b5 51.94%,
+    #9d5dd4 90.29%
+  );
+}
+
+.purple-gradient{
+  transition: background-color 1s ease-in-out;
+  background-color: #8224e3;
+  color:white;
+  background: linear-gradient(
+    157.81deg,
+    #9b52cc -43.27%,
+    #9235d8 -21.24%,
+    #5e18ec 12.19%,
+    #730de8 29.82%,
+    #8a33b5 51.94%,
+    #9d5dd4 90.29%
+  );
+}
+
+.bg-black-gradient {
+  background-color: #383a45;
+  background: linear-gradient(135deg, #4f5261 0%, #383a45 50%)
 }
 
 .box-shadow {
@@ -143,8 +190,17 @@
   filter: blur(750px);
 }
 
-::-webkit-scrollbar{
-  display: none;
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #9a9797;
+  border-radius: 5px;
 }
 
 /* Loading Dots */
@@ -204,3 +260,94 @@
   }
 }
 
+/* Upvote Sparkling */
+.sparkle { 
+    width: 100%;
+    height: 100%;
+    -webkit-appearance: none;
+    appearance: none;
+    z-index: 100;
+    transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+  }
+  .sparkle:focus { outline: 0; }
+  
+  .sparkle:before, .sparkle:after {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 140%;
+    height: 100%;
+    left: -20%;
+    z-index: 1000;
+    transition: all ease-in-out 0.5s;
+    background-repeat: no-repeat;
+  }
+  .sparkle:before {
+    display: none;
+    top: -75%;
+    background-image: radial-gradient(circle, #6a00ff 20%, transparent 20%),
+     radial-gradient(circle, transparent 20%, #6a00ff 20%, transparent 30%),
+     radial-gradient(circle, #6a00ff 20%, transparent 20%), 
+     radial-gradient(circle, #6a00ff 20%, transparent 20%), 
+     radial-gradient(circle, transparent 10%, #6a00ff 15%, transparent 20%), 
+     radial-gradient(circle, #6a00ff 20%, transparent 20%), 
+     radial-gradient(circle, #6a00ff 20%, transparent 20%),
+     radial-gradient(circle, #6a00ff 20%, transparent 20%),
+     radial-gradient(circle, #6a00ff 20%, transparent 20%);
+    background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%,
+     10% 10%, 18% 18%;
+  }
+   .sparkle:after {
+    display: none;
+    bottom: -75%;
+    background-image: radial-gradient(circle, #6a00ff 20%, transparent 20%),
+     radial-gradient(circle, #6a00ff 20%, transparent 20%), 
+     radial-gradient(circle, transparent 10%, #6a00ff 15%, transparent 20%), 
+     radial-gradient(circle, #6a00ff 20%, transparent 20%),
+     radial-gradient(circle, #6a00ff 20%, transparent 20%),
+     radial-gradient(circle, #6a00ff 20%, transparent 20%),
+     radial-gradient(circle, #6a00ff 20%, transparent 20%);
+    background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
+  }
+  
+  .sparkle:active {
+    transform: scale(0.9);
+  }
+  
+  .sparkle.animate:before {
+    display: block;
+    animation: topBubbles ease-in-out 0.75s forwards;
+  }
+  
+  .sparkle.animate:after {
+    display: block;
+    animation: bottomBubbles ease-in-out 0.75s forwards;
+  }
+
+   @keyframes
+  topBubbles {  0% {
+   background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 
+   55% 90%, 70% 90%;
+  }
+   50% {
+   background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 
+   65% 20%, 90% 30%;
+  }
+   100% {
+   background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%,
+    65% 10%, 90% 20%;
+   background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+  }
+  @keyframes
+  bottomBubbles {  0% {
+   background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%, 70% -10%, 70% 0%;
+  }
+   50% {
+   background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%, 105% 0%;
+  }
+   100% {
+   background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%;
+   background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+  }

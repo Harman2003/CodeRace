@@ -2,7 +2,9 @@ const PostData = require('../../model/Post');
 const CommentData= require('../../model/Comments');
 
 const createPostController = async (req, res) => {
-    const {username, list} = req.body;
+    const { list } = req.body;
+    const username = req.query.username
+   
     const finalList = list.filter(e => {
         if (typeof e === 'string' && e.trim()==='') {
             return false;
@@ -16,8 +18,7 @@ const createPostController = async (req, res) => {
         data: finalList,
         countComments: 0,
         countLikes: 0,
-        countShare: 0,
-        countSaved: 0
+        countShare: 0
     }
     try {
         const post = await PostData.create(finalObj);

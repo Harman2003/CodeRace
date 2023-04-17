@@ -13,10 +13,9 @@ import { ProblemProvider } from "./pages/problem-page/context/ProblemContext";
 function App() {
   const client = new QueryClient();
   return (
-    <div className="App h-screen bg-slate-50">
+    <div className="App h-screen font-NunitoSans bg-gray-50">
       <QueryClientProvider client={client}>
         <Navbar />
-
         <Routes>
           <Route exact path="/" element={<Landing current={false} />} />
           <Route path="/signup" element={<Landing current={false} />} />
@@ -24,7 +23,7 @@ function App() {
           <Route element={<VerifyAuth/>}>
             <Route path="/profile/:id" element={<Profile current={false} />} />
           </Route>
-          <Route path="/post" element={<PostPage/>}/>
+          <Route path="/social/*" element={<PostPage/>}/>
           <Route path="/problems">
             <Route index element={<Problems />} />
             <Route path=":id/*" element={<ProblemProvider><ProblemPage /></ProblemProvider>} />

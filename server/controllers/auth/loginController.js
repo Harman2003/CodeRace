@@ -1,11 +1,14 @@
-const User = require("../model/UserCredential");
+const User = require("../../model/UserCredential");
 const bcrypt = require("bcrypt");
 const jwt = require('jsonwebtoken');
+require('dotenv').config();
 
 const handleLogin = async (req, res) => {
   console.log(req.body)
   const { nameOrmail, password } = req.body;
-  if(!nameOrmail || !password)return res.sendStatus(401)
+  if (!nameOrmail || !password) return res.sendStatus(401)
+  
+  console.log(nameOrmail, password)
 
   let foundUser;
   if (nameOrmail.includes("@"))
@@ -14,24 +17,26 @@ const handleLogin = async (req, res) => {
 
   if (!foundUser) return res.sendStatus(401); //unauthorized
 
-  const match = bcrypt.compare(password, foundUser.password);
+  const match = await bcrypt.compare(password, foundUser.password);
+  console.log(match)
 
-  if (match) {
+  if (match) { 
+    // console.log(process.env.ACCESS_TOKEN_SECRET);
     
     const accessToken = jwt.sign(
       {
-          username: foundUser.username,
+        username: foundUser.username,
       },
-      process.env.ACCESS_TOKEN_SECRET,
-      { expiresIn: "30s" }
+      'afdf543asg34r2f498af',
+      { expiresIn: "10m" }
     );
     const refreshToken = jwt.sign(
       {
-          username: foundUser.username,
+        username: foundUser.username,
       },
-      process.env.REFRESH_TOKEN_SECRET,
+      "faepwrfi2r948iferijg",
       { expiresIn: "1d" }
-    )
+    );
 
     await User.updateOne({ _id: foundUser['_id'] }, { refreshToken: refreshToken }, { runValidators: true })
     

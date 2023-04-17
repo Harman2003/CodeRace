@@ -1,6 +1,6 @@
 const bcrypt = require('bcrypt');
-const UserData= require('../model/UserData')
-const User= require('../model/UserCredential')
+const UserData= require('../../model/UserData')
+const User= require('../../model/UserCredential')
 
 const handleNewUser = async (req, res) => {
     const { fullname, username, email, password} = req.body;
@@ -22,7 +22,8 @@ const handleNewUser = async (req, res) => {
             password: hashedPass
         }
         await User.create(newUser);
-        await UserData.create({username: username, fullname: fullname, email: email})
+        await UserData.create({ username: username, fullname: fullname, email: email, registered:new Date(), follower: [], following: [], likedpost: [], savedpost: []})
+        
         console.log(newUser)
         res.status(200).json(newUser);
     }

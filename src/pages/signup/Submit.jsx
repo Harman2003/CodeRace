@@ -21,6 +21,9 @@ const Button = ({ States }) => {
     onError: err => {
       console.log(err);
       setStatus(err.response.status);
+      setTimeout(() => {
+        setStatus(0);
+      }, 3000);
     }
 } )
 

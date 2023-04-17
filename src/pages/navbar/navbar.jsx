@@ -8,13 +8,13 @@ const Navbar = () => {
   const [popup, setpopup] = useState(false);
 
   return (
-    <div className="flex relative h-10 justify-between items-center shadow-sm bg-black-gradient text-gray-300">
+    <div className="flex relative h-14 justify-between items-center bg-white border-b-[1px]">
 
       <div className="block sm:hidden ml-4" onClick={() => setpopup(!popup)}>
         {popup ? <><BiX size={26} /><Profile/></> : <BiMenu size={26} />}
       </div>
       
-      <div className=" ml-6 text-sm ">CodeRace</div>
+      <div className=" ml-6 text-2xl">CodeRace</div>
       <div className="hidden sm:block">
         <Options />
       </div>

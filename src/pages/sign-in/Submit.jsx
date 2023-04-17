@@ -6,8 +6,8 @@ const Button = ({ usernameRef, passwordRef, isSpace }) => {
 
   const navigate = useNavigate();
   const location = useLocation();
-  const {auth}=useAuth()
-  const from = location.state?.from?.pathname || `/profile/${auth.user}`;
+  const { auth } = useAuth();
+  
   const [status, isLoading, CallApi] = useLogin();
   const [isError, setError] = useState();
 
@@ -30,8 +30,8 @@ const Button = ({ usernameRef, passwordRef, isSpace }) => {
   console.log(status)
   useEffect(() => {
     if (status == 200) {
-      console.log(from)
       setTimeout(() => {
+        const from = location.state?.from?.pathname || `/profile/${auth.user}`;
         navigate(from, { replace: true });
       }, 2000);
     }

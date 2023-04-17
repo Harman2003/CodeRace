@@ -1,26 +1,36 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { RxDoubleArrowLeft as LeftArrow } from "react-icons/rx";
 import { RxDoubleArrowRight as RightArrow } from "react-icons/rx";
 import { useQuery } from "react-query";
 import Singlerow from "./components/singlerow";
 import Navbar from "./components/navbar";
 import { fetchData } from "./api/problemset";
+import { useNavigate } from "react-router-dom";
 
 const Questions = () => {
   const [page, setpage] = useState(0);
+  const navigate= useNavigate()
 
-  const { data, isLoading, isError } = useQuery(["problemset"], fetchData, {
-    cacheTime: 3600000});
+  const { data, isLoading , isError} = useQuery(["problemset"], fetchData, {
+    cacheTime: 360000
+  });
+  
   let problemset;
   let maxPage;
-  if (!isLoading) {
+  if (!isLoading && !isError) {
+    const problemList = data?.data.result.problems;
     const uniqueArray = Array.from(
-      new Set(data.map((obj) => JSON.stringify(obj)))
+      new Set(problemList?.map((obj) => JSON.stringify(obj)))
     ).map((str) => JSON.parse(str));
     maxPage = Math.floor(uniqueArray.length / 100+1);
     problemset = uniqueArray.slice(100 * page, 100 * (page + 1));
   }
 
+  useEffect(() => {
+    if (isError) {
+      navigate('../not-found')
+    }
+  }, [isError]);
   return (
     <>
       <div className="relative text-sm flex-grow overflow-scroll">
@@ -28,7 +38,7 @@ const Questions = () => {
         {isLoading && <h1>Loading...</h1>}
         {!isLoading && (
           <div>
-            {problemset.map((e,i) => {
+            {problemset?.map((e,i) => {
               return (
                 <Singlerow
                   key={e.name+i}

@@ -6,7 +6,7 @@ import Options from "./options";
 const Profile = () => {
   return (
 
-    <div className="absolute top-11 sm:top-9 sm:left-6 sm:-translate-x-full bg-black-gradient p-4 shadow-2xl rounded-lg z-10 text-gray-100">
+    <div className="absolute top-11 sm:top-9 sm:left-6 sm:-translate-x-full bg-black-gradient p-4 shadow-2xl rounded-lg z-40 text-gray-100">
       
       <div className="flex items-center">
         <img

@@ -10,7 +10,7 @@ import { IoMdCheckmarkCircleOutline as Done } from "react-icons/io";
 import ProblemModal from "./ProblemModal";
 import TextareaAutosize from "react-textarea-autosize";
 import CodeModal from "./CodeModal";
-import row from "../SingleRow";
+import row from "../Post-Section/SinglePost/TableRow";
 import useSubmit from "../../../../setup/hooks/useSubmit";
 import useAuth from "../../../../setup/hooks/useAuth";
 import { useEffect } from "react";
@@ -50,21 +50,8 @@ const CreatePost = ({ setpostData }) => {
   }, [isLoading])
  
   return (
-    <>
-      {/* Post Submitted */}
-      {(!isLoading && status===201) && <div className="animate-fade absolute flex items-center top-1 left-1/2 -translate-x-1/2 p-2 bg-green-100 text-green-700 rounded-full font-semibold font-openSans text-sm">
-        {" "}
-        <Done size={20} />
-        <div>Posted Successfully</div>
-      </div>}
-      {/* Server Error */}
-     {(!isLoading && status===500 )&& <div className="animate-fade absolute flex items-center top-1 left-1/2 -translate-x-1/2 p-2 bg-red-100 text-red-700 rounded-full font-semibold font-openSans text-sm">
-        {" "}
-        <X size={20} />
-        <div>Please Try Again</div>
-      </div>}
-
-      <div className="min-h-[120px] bg-white rounded-lg mt-4 p-2 ">
+    <div className="relative">
+      <div className="relative min-h-[120px] bg-white rounded-lg my-10 mb-16 p-2 z-10">
         <div className="font-semibold text-sm text-gray-600">
           Post Something
         </div>
@@ -82,8 +69,13 @@ const CreatePost = ({ setpostData }) => {
             <button
               disabled={postList[0] && !isLoading ? false : true}
               onClick={() => {
-                submit('api/post',{
-                  list: postList,
+                submit("api/post", {
+                  body: {
+                    list: postList,
+                  },
+                  query: {
+                    params: { username: auth.user },
+                  },
                 });
               }}
               className="cursor-pointer ml-auto mr-7 mt-2"
@@ -148,7 +140,28 @@ const CreatePost = ({ setpostData }) => {
       {isModal === "code" && (
         <CodeModal setList={setList} setIsModal={setIsModal} />
       )}
-    </>
+      {/* Post Submitted Popup*/}
+      {!isLoading && status === 201 && (
+        <div className="animate-fade fixed flex items-center top-1 left-1/2 -translate-x-1/2 p-2 bg-green-100 text-green-700 rounded-full font-semibold  text-sm">
+          {" "}
+          <Done size={20} />
+          <div>Posted Successfully</div>
+        </div>
+      )}
+      {/* Server Error Popup*/}
+      {!isLoading && status === 500 && (
+        <div className="animate-fade fixed flex items-center top-1 left-1/2 -translate-x-1/2 p-2 bg-red-100 text-red-700 rounded-full font-semibold  text-sm">
+          {" "}
+          <X size={20} />
+          <div>Please Try Again</div>
+        </div>
+      )}
+
+      {/* Background Shades */}
+      <div className="absolute w-[120%] h-[150%] translate-x-1/2 right-1/2 translate-y-1/2 bottom-1/2 bg-slate-50/50 z-0 rounded-full"></div>
+      <div className="absolute w-[110%] h-[130%] translate-x-1/2 right-1/2 translate-y-1/2 bottom-1/2 bg-slate-100/50 z-0 rounded-full"></div>
+      <div className="absolute w-[95%] h-full -bottom-2 translate-x-1/2 right-1/2 bg-slate-100 z-0 rounded-lg"></div>
+    </div>
   );
 
   function postListElement(index, element) {
@@ -164,7 +177,7 @@ const CreatePost = ({ setpostData }) => {
             placeholder={
               index == 0 ? "What's on your mind?" : "Write some text here"
             }
-            className="border-[1px] border-gray-100 rounded-md p-1 w-[96%] max-h-80 overflow-scroll resize-none text-gray-600 placeholder:text-gray-400 focus:outline-0 transition ease-in hover:scale-[1.01] "
+            className="border-[1px] border-gray-100 rounded-md p-1 w-[96%] max-h-80 overflow-y-auto resize-none text-gray-600 placeholder:text-gray-400 focus:outline-0 transition ease-in hover:scale-[1.01] "
           ></TextareaAutosize>
         ) : Array.isArray(element) ? (
           <div className="w-[99%] my-2">
@@ -175,14 +188,14 @@ const CreatePost = ({ setpostData }) => {
               <div className="w-1/6">Rating</div>
             </div>
             {/* List */}
-            <div className=" max-h-96 overflow-y-scroll ">
+            <div className=" max-h-96 overflow-y-auto overflow-x-hidden">
               {element.map((e, i) =>
                 row(i, e.name, e.index, e.contestId, e.rating, false)
               )}
             </div>
           </div>
         ) : (
-          <div className="border-[1px] border-gray-100 rounded-md p-1 w-[96%] max-h-80 overflow-scroll resize-none text-gray-600 placeholder:text-gray-400 focus:outline-0 transition ease-in hover:scale-[1.01] ">{`\`${element.code}\``}</div>
+          <div className="border-[1px] border-gray-100 rounded-md p-1 w-[96%] max-h-80 overflow-y-auto resize-none text-gray-600 placeholder:text-gray-400 focus:outline-0 transition ease-in hover:scale-[1.01] ">{`\`${element.code}\``}</div>
         )}
         {postList.length > 1 && (
           <X

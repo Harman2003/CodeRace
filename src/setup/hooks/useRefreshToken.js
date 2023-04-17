@@ -1,24 +1,40 @@
-import axios from '../api/axios';
-import useAuth from './useAuth';
+import axios from "../api/axios";
+import useAuth from "./useAuth";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const useRefreshToken = () => {
+  const { setAuth } = useAuth();
+  const navigate = useNavigate();
+  const location = useLocation();
 
-    const { setAuth } = useAuth();
-
-    const refresh = async () => {
-        const response = await axios.get('/refresh', {
-            headers: {
-            "Content-Type": "application/json"
+  const refresh = async () => {
+    try {
+      const response = await axios.get("/refresh", {
+        headers: {
+          "Content-Type": "application/json",
         },
-            withCredentials: true
-        });
-        setAuth(prev => {
-            localStorage.setItem('auth', JSON.stringify({user:response.data.username, accessToken: response.data.accessToken}))
-            return {user:response.data.username, accessToken: response.data.accessToken}
+        withCredentials: true,
+      });
+      console.log(response);
+       localStorage.setItem(
+        "auth",
+         JSON.stringify({
+          user: response.data.username,
+          accessToken: response.data.accessToken,
         })
-        return response.data.accessToken
-    }
-    return refresh;
-}
+      );
 
-export default useRefreshToken
+       setAuth({
+        user: response.data.username,
+        accessToken: response.data.accessToken,
+      });
+     
+      return {username:response.data.username, newAccessToken:response.data.accessToken};
+    } catch (err) {
+      navigate("/login", { state: { from: location } });
+    }
+  };
+  return refresh;
+};
+
+export default useRefreshToken;

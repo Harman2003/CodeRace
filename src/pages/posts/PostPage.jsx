@@ -1,22 +1,24 @@
-import React, { useState } from "react";
-import Sidebar from "./components/Sidebar";
-import CreatePost from "./components/createPost/CreatePost";
-import Posts from "./components/allPosts/Posts";
-import Stats from "./components/Stats";
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import Posts from "./components/Post-Section/AllPosts/Posts";
+import Stats from "./components/Sidebars/Stats";
+import SideProfile from "./components/Sidebars/SideProfile";
+import Members from "./components/Members/Members";
 
 const PostPage = () => {
-  const [postData, setpostData] = useState([]);
-
   return (
-    <div className="w-full h-[calc(100vh-40px)] flex justify-center">
-      <Sidebar />
-      <div className=" w-[50%] h-full  overflow-scroll">
-        <CreatePost setpostData={setpostData} />
-        <Posts postData={postData} setpostData={setpostData} />
+    <div className="w-full h-[calc(100vh-56px)] flex ">
+      <SideProfile />
+
+      <div className="bg-white h-full flex-grow md:flex overflow-y-auto overflow-x-hidden">
+        <Routes>
+          <Route path="/" element={<Posts />} />
+          <Route path="/members" element={<Members />} />
+        </Routes>
+        <Stats />
       </div>
-      <Stats />
     </div>
-  );
-};
+  ) 
+}
 
 export default PostPage;

@@ -5,25 +5,14 @@ import { RiArrowRightSLine as Arrow } from "react-icons/ri";
 import useAuth from "../../../../setup/hooks/useAuth";
 import useProblemData from "../../context/useProblemData";
 import useAxiosPrivate from '../../../../setup/hooks/useAxiosPrivate';
-import { useLocation, useNavigate } from "react-router-dom";
 
 const Submission = ({ id }) => {
 
   const axiosPrivate = useAxiosPrivate()
-  const navigate = useNavigate();
-  const location= useLocation()
   const { setCode } = useProblemData()
   const { auth } = useAuth();
   const username = auth.user;
-  const { data, isLoading } = useQuery("getSubmission", apiCall, {
-    onError: (err) => {
-      if (err.response.status === 403) {
-        navigate('/login', {
-          state:{from:location}
-        })
-       }
-    }
-  })
+  const { data, isLoading } = useQuery("getSubmission", apiCall)
 
   return (
     <div className="h-full bg-white">

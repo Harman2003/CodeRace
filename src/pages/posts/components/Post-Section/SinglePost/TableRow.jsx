@@ -3,7 +3,7 @@ export default function row(key, problemName, index, contestId, rating) {
     <div
       key={key}
       data-tag={key}
-      className="font-poppins m-1 px-2 py-1 flex items-center text-sm shadow-sm cursor-pointer transition duration-300 ease-in-out hover:scale-[1.02] delay-100"
+      className="font-NunitoSans m-1 px-2 py-1 flex items-center text-sm shadow-sm cursor-pointer transition duration-300 ease-in-out hover:scale-[1.02] delay-100"
     >
       <div className=" w-2/3 ">{`${index}. ${problemName}`}</div>
 

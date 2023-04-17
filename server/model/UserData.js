@@ -10,6 +10,14 @@ const UserData = new Schema({
     type: String,
     required: true,
   },
+  registered: {
+    type: Date,
+    default: new Date(2003, 1, 1),
+  },
+  active: {
+    type: Date,
+    default: new Date(),
+  },
   skills: [String],
   bio: {
     type: String,
@@ -32,7 +40,7 @@ const UserData = new Schema({
   },
   postCount: {
     type: Number,
-    default: 0,
+    default: 3,
   },
   problemSolved: {
     type: {
@@ -43,8 +51,16 @@ const UserData = new Schema({
     default: {
       easy: 0,
       medium: 0,
-      hard:0
-    }
+      hard: 0,
+    },
+  },
+  followerCount: {
+    type: Number,
+    default: 2,
+  },
+  followingCount: {
+    type: Number,
+    default: 0,
   },
   follower: [String],
   following: [String],
@@ -60,8 +76,8 @@ const UserData = new Schema({
     type: String,
     default: "https://linkedIn.com",
   },
-  likedpost: [String],
-  savedpost: [String],
+  likedpost: [{ type: mongoose.Schema.Types.ObjectId, ref: "Post" }],
+  savedpost: [{ type: mongoose.Schema.Types.ObjectId, ref: "Post" }],
 });
 
 module.exports = mongoose.model("UserData", UserData);

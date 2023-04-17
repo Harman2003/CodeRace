@@ -1,10 +1,9 @@
 const jwt = require('jsonwebtoken');
-const UserDB = require('../model/UserCredential');
+const UserDB = require('../../model/UserCredential');
 
 const refreshJWT = (req, res) => {
     const cookies = req.cookies;
-    console.log(cookies);
-    if (!cookies?.jwt) return res.status(401);
+    if (!cookies?.jwt) return res.sendStatus(401);
 
     const refreshToken = cookies.jwt;
     const foundUser = UserDB.find({ refreshToken: refreshToken });
@@ -12,15 +11,16 @@ const refreshJWT = (req, res) => {
     
     jwt.verify(
         refreshToken,
-        process.env.REFRESH_TOKEN_SECRET,
+        "faepwrfi2r948iferijg",
         (err, decoded)=>{
             if (err) return res.sendStatus(403);
-
+            
             const accessToken = jwt.sign(
-                { "username": decoded.username },
-                process.env.ACCESS_TOKEN_SECRET,
-                {expiresIn: '15m'}
-            )
+              { username: decoded.username },
+              "afdf543asg34r2f498af",
+              { expiresIn: "15m" }
+            );
+            
             res.json({username:decoded.username,accessToken})
         }
     )
