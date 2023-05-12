@@ -17,6 +17,7 @@ const memberRouter= require('./routes/members')
 const verifyJWT = require('./middleware/verifyJWT');
 const cookieParser = require('cookie-parser');
 const isActive = require('./middleware/isActive');
+const populate= require('./populate')
 connectDB();
 
 App.use(express.json());
@@ -34,7 +35,7 @@ App.use(isActive);
 App.use('/api/members', memberRouter)
 App.use('/api/post', postRouter)
 
-mongoose.connection.once('open', () => {
+mongoose.connection.once('open', async () => {
     console.log('Connected To MONGODB');
     App.listen(PORT, () => {
         console.log('Listening on Port ', PORT)

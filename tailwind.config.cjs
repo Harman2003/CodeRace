@@ -8,6 +8,11 @@ module.exports = {
         fade: "fadeOut 3s ease-in-out forwards",
       },
 
+      backgroundImage: {
+        'contest-lg': "url('/images/contest.png')",
+        'contest-sm': "url('/images/contest2.png')"
+      },
+
       // that is actual animation
       keyframes: (theme) => ({
         fadeOut: {

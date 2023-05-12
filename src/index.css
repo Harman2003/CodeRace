@@ -75,16 +75,6 @@
   background: linear-gradient(to bottom right, #ff5500, #ff9400);
 }
 
-.bg-orange-gradient{
-  background: linear-gradient(
-    144.39deg,
-    #ffffff -278.56%,
-    #fdc49b -78.47%,
-    #fc710e 91.61%
-  )
-}
-
-
 
 .bg-blue-gradient {
   background: linear-gradient(
@@ -108,6 +98,28 @@
     #730de8 29.82%,
     #8a33b5 51.94%,
     #be90e6 90.29%
+  );
+}
+
+.bg-orange-gradient{
+  background-color: #e55614;
+  background: linear-gradient(
+    157.81deg,
+    #f1531a 12.19%,
+    #cf6129 29.82%,
+    #9030d5 80.94%,
+    #7b09b4 90.29%
+  );
+}
+
+.bg-orange-texture{
+  background-color: #e55614;
+  background: linear-gradient(
+    157.81deg,
+    #f1531a 12.19%,
+    #cf6129 29.82%,
+    #d58030 80.94%,
+    #dc9616 90.29%
   );
 }
 

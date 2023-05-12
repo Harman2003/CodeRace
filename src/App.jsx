@@ -9,6 +9,7 @@ import Profile from "./pages/profile-page/profile";
 import PostPage from "./pages/posts/PostPage";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ProblemProvider } from "./pages/problem-page/context/ProblemContext";
+import Contest from "./pages/contests/Contest";
 
 function App() {
   const client = new QueryClient();
@@ -24,6 +25,7 @@ function App() {
             <Route path="/profile/:id" element={<Profile current={false} />} />
           </Route>
           <Route path="/social/*" element={<PostPage/>}/>
+          <Route path="/contests/*" element={<Contest/>}/>
           <Route path="/problems">
             <Route index element={<Problems />} />
             <Route path=":id/*" element={<ProblemProvider><ProblemPage /></ProblemProvider>} />

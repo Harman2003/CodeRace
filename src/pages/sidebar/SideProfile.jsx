@@ -1,20 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { CgFeed } from "react-icons/cg";
-import { BsJournalBookmarkFill as Book } from "react-icons/bs";
-import { MdGroups as Group } from "react-icons/md";
-import { BsFilePost as Post } from "react-icons/bs";
-import { CgProfile as Profile } from "react-icons/cg";
-import { AiFillSetting as Setting } from "react-icons/ai";
-import useAuth from "../../../../setup/hooks/useAuth";
+import useAuth from "../../setup/hooks/useAuth";
 
-const SideProfile = () => {
+const SideProfile = ({list}) => {
   const { auth } = useAuth();
   return (
-    <div className="flex flex-col top-0 bg-gray-50 border-r-[1px] md:w-[18%] sm:w-[70px] w-[55px] mr-auto shadow-sm font-NunitoSans">
+    <div className="flex flex-col top-0 bg-gray-50 border-r-[1px] md:w-[18%] sm:w-[70px] w-[55px] shadow-sm font-NunitoSans">
       {/* dark */}
       <div className="relative justify-end w-full md:h-1/2 h-24 bg-black-gradient">
-        <div className="md:flex hidden z-10 absolute flex-col -bottom-10 bg-white rounded-md shadow-lg w-5/6 h-64 pt-10 right-[50%] translate-x-1/2">
+        <div className="md:flex hidden z-10 absolute flex-col -bottom-16 bg-white rounded-md shadow-lg w-5/6 h-64 pt-10 right-[50%] translate-x-1/2">
           <img
             className="min-w-[80px] w-20 h-20 rounded-full self-center p-1 border-2"
             src="/images/user.png"
@@ -44,33 +38,37 @@ const SideProfile = () => {
       </div>
 
       {/* light */}
-      <div className="self-center w-5/6 mt-6 md:mt-20 md:grid gap-2 grid-cols-2">
-        {element("Feed", '/social', CgFeed)}
-        {element("Collection",'', Book)}
-        {element("Friends", '/social/members', Group)}
-        {element("My Post",'', Post)}
-        {element("Profile", `/profile/${auth.user}`, Profile)}
-        {element("Settings",'', Setting)}
+      <div className="self-center w-5/6 mt-10 md:mt-28 md:grid gap-2 grid-cols-2">
+        {list.map((option, index)=>element(index, option.name, option.path, option.icon, option.on))}
       </div>
     </div>
   )
 }
 
 
-function element(value, path, Icon) {
+function element(index, value, path, Icon, isSelect) {
   return (
-    <Link
+    <Link key={index}
       to={path}
       className="relative group flex flex-col items-center justify-center h-[75px] py-2"
     >
       <Icon
-        size={20}
+        size={25}
         className="mb-2 text-gray-400 child group-hover:text-purple-700"
+        style={{ color: isSelect && "rgb(126, 34, 206)" }}
       />
 
       <div className="hidden md:block">
-        <div className="group-hover:text-purple-700 text-lg">{value}</div>
-        <div className="bg-purple-700 max-w-0 group-hover:max-w-full transition-all duration-500 h-[1px]"></div>
+        <div
+          className="group-hover:text-purple-700 text-lg"
+          style={{ color: isSelect && "rgb(126, 34, 206)" }}
+        >
+          {value}
+        </div>
+        <div
+          className="bg-purple-700 max-w-0 group-hover:max-w-full transition-all duration-500 h-[1px]"
+          style={{ maxWidth: isSelect && "100%" }}
+        ></div>
       </div>
 
       {/* hover-title */}

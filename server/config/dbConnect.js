@@ -4,7 +4,7 @@ const connectDB = async (uri) => {
     mongoose.set("strictQuery", true);
     try {
         await  mongoose.connect(
-          MONGO_URI,
+          process.env.MONGO_URI,
           {
             useUnifiedTopology: true,
             useNewUrlParser: true,
@@ -15,5 +15,4 @@ const connectDB = async (uri) => {
     }
     
 }
-
 module.exports= connectDB
