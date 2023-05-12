@@ -184,39 +184,6 @@ contract Codeforces is ChainlinkClient, AutomationCompatibleInterface{
         delete participants[handle];     
     }
 
-     //  function checkUpkeep(
-    //     bytes calldata /* checkData */
-    // )
-    //     external
-    //     view
-    //     override
-    //     returns (bool upkeepNeeded, bytes memory Id)
-    // {
-    //     bool isTime= (block.timestamp - lastUpkeepTime) > interval;
-
-    //     // check if any contest completed 
-    //     bool hasCompleted;
-    //     for(uint i=0; i<contestSet.length(); i++){
-    //         Contest contest= contestMapping[contestSet[i]];
-    //         uint endTime= contest.startTime+contest.duration;
-    //         if(endTime < block.timestamp){
-    //             hasCompleted=true;
-    //             Id= bytes.concat(bytes32(contestSet[i]));
-    //             break;
-    //         }
-    //     }
-
-    //     upkeepNeeded= (isTime && hasCompleted);
-    // }
-
-    //  function performUpkeep(bytes calldata Id) external override {
-    //     bool upkeepNeeded= (block.timestamp - lastUpkeepTime) > interval;
-    //     require(upkeepNeeded, "Time interval not met");
-    //     lastUpkeepTime = block.timestamp;
-    //     upkeepCounter = upkeepCounter + 1;
-
-    // }
-
     function requestPlayersList() public {
         Chainlink.Request memory req = buildChainlinkRequest(
             bytes32(abi.encodePacked(jobId1)),
